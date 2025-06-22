@@ -47,7 +47,7 @@ class MemberController extends Controller
                 'phone' => 'required',
                 'designation' => 'required',
                 'email' => 'required',
-                'whatsapp' => 'required',
+                
                 'facebook' => 'required',
                 'linkedin' => 'required',
                 'bio' => 'required',
@@ -60,7 +60,7 @@ class MemberController extends Controller
                 'designation.required' => 'designation cannot be empty.',
                 'bio.required' => 'bio cannot be empty.',
                 'email.required' => 'email cannot be empty.',
-                'whatsapp.required' => 'whatsapp cannot be empty.',
+                
                 'facebook.required' => 'facebook cannot be empty.',
                 'linkedin.required' => 'linkedin cannot be empty.',
                 'image.required' => 'image cannot be empty.',
@@ -87,7 +87,7 @@ class MemberController extends Controller
                     $member->designation = $request->designation;
                     $member->bio = $request->bio;
                     $member->email = $request->email;
-                    $member->whatsapp = $request->whatsapp;
+                 
                     $member->facebook = $request->facebook;
                     $member->linkedin = $request->linkedin;
                     $member->save();
@@ -157,10 +157,8 @@ class MemberController extends Controller
             if(isset($request->dp)){
                 $url =  $request->dp;
             }
-            if(isset($request->image)){
-                $url = time().'.'.$request->image->extension();  
-                $request->image->move('assets/images/member', $url);
-            }
+
+
             $member = Member::find($id);
             $member->name = $request->name;
             $member->image = $url;
