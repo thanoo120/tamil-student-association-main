@@ -263,8 +263,9 @@
                         </div>
                     </div>
                 </div>
-                @if ($about->about_left != null && $about->about_right != null)
-                <div id="about" class="section-area section-sp2 mt-4 bg-fix ovbl-dark" style="background-image:url(assets/blog/assets/images/slider/uni1.jpg);">
+@if ($about && $about->about_left != null && $about->about_right != null)
+<section id="about">
+                    <div id="about" class="section-area section-sp2 mt-4 bg-fix ovbl-dark" style="background-image:url(assets/blog/assets/images/slider/uni1.jpg);">
                     <div class="container">
                         <div class="row">
                             <div class="col-md-12 text-white heading-bx">
@@ -299,7 +300,8 @@
                         </div>
                     </div>
                 </div>
-                @endif
+</section>
+@endif
                 @if (count($events) > 0)
                 <div id="events" class="section-area section-sp3">
                     <div class="container">
@@ -458,7 +460,7 @@
                                     <div class="item">
                                         <div class="recent-news1">
                                             <div class="member">
-                                                <img src="{{asset("assets/images/member")."/".$item->image}}" alt="{{$item->name}}">
+                                                <img src="{{asset("assets/images/member")."/".$item->image}}" alt="Portrait of {{$item->name}}, {{$item->designation}} of the Tamil Student Association, smiling and wearing formal attire, standing in a university or event setting. If visible, text in the image: {{$item->name}} {{$item->designation}}. The atmosphere is welcoming and professional.">
                                                 <h4>{{$item->name}}</h4>
                                                 <span>{{$item->designation}}</span>
                                                 <p>
@@ -506,4 +508,13 @@
             </div>
         </div>
     </div>
-    
+
+{
+  "version": 2,
+  "builds": [
+    { "src": "api/index.php", "use": "@vercel/php" }
+  ],
+  "routes": [
+    { "src": "/(.*)", "dest": "api/index.php" }
+  ]
+}
