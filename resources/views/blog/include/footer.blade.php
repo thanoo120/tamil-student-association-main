@@ -63,7 +63,8 @@
     <div class="footer-bottom">
         <div class="container">
             <div class="row">
-                <div class="col-lg-12 col-md-12 col-sm-12 text-center"><script>document.write(new Date().getFullYear())</script> © TSA - Developed By <a class="text-danger" href="https://wa.me/+94775428041/?text=Hello, Saru!">Sarujan</a>.</div>
+                <div class="col-lg-12 col-md-12 col-sm-12 text-center"><script>document.write(new Date().getFullYear())</script> © TSA - Developed By <a class="text-danger" href="https://wa.me/+94775428041/?text=Hello, Saru!">TSA
+                </a>.</div>
             </div>
         </div>
     </div>
